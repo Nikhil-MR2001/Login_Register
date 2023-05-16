@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post", enctype="multipart/form-data">
+    {% csrf_token %}
+  <input type="email" id="from" name="from" placeholder="From"><br>
+
+  <input type="text" id="subject" name="subject" placeholder="Subject"><br>
+
+  <input type="text" id="msg" name="msg" placeholder="Message"><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+
+</body>
+</html>
